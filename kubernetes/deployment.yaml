@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phonebook-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: phonebook-app
+  template:
+    metadata:
+      labels:
+        app: phonebook-app
+    spec:
+      containers:
+      - name: phonebook-app
+        image: janajohny/phonebook:latest
+        ports:
+        - containerPort: 8888
+        env:
+            - name: db_root_password
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: root_password
+            - name: db_name
+              value: db_phonebook
