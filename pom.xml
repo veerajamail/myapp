@@ -140,11 +140,11 @@
 		</pluginRepository>
 	</pluginRepositories>
 	  <distributionManagement>
-		  <!--        <repository>
+		  <repository>
                   <id>maven-releases</id>
                   <name>maven-releases</name>
                   <url>http://192.168.195.156:8081/repository/maven-releases/</url>
-			  </repository> !-->
+	          </repository>
                <snapshotRepository>
                   <id>maven-snapshots</id>
                   <name>maven-snapshots</name>
